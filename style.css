@@ -1,0 +1,761 @@
+/* === HEADER FIXO === */
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #1a1a2e; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra discreta */
+}
+
+/* Garante que o conteúdo não fique escondido atrás da navbar */
+body {
+  font-family: 'Sora', sans-serif;
+  background-color: #111;
+  color: #fff;
+  padding-top: 96px; /* Aumentado para compensar o header com padding */
+}
+
+/* SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === LOGO === */
+.logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+}
+
+/* === NAV LINKS === */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ccc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+ display: flex;
+  align-items: center;
+  gap: 8px; /* espaço entre o ícone e o texto */
+}
+
+.nav-links a img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* deixa os ícones brancos */
+}s
+
+.nav-links a:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* === BOTÃO DE CONTATO === */
+.contact-btn {
+  background-color: #007bff;
+  color: white !important;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: bold;
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+}
+
+/* === HERO SECTION === */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  background: url('img/herobg.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.8);
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+  font-size: 1.75rem;
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #5463d8;
+}
+
+/* === RESPONSIVIDADE HERO === */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin: 0 auto 1.5rem;
+  }
+}
+
+/* === ABOUT SECTION === */
+.about-section {
+  padding: 80px 20px;
+  background-color: #121212;
+  color: #f1f1f1;
+  text-align: left;
+}
+
+.about-section .container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.nav-links a.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* === SEÇÕES GERAIS DE CONTEÚDO === */
+section {
+  padding: 80px 20px; /* Espaçamento interno em cima/baixo e nas laterais */
+  max-width: 1200px; /* Largura máxima para o conteúdo não esticar demais */
+  margin: 0 auto; /* Centraliza a seção na página */
+  background-color: #121212; /* Fundo escuro para as seções */
+  color: #f1f1f1; /* Cor do texto claro */
+  text-align: left; /* Centraliza o texto por padrão, pode ser ajustado para esquerda em elementos específicos */
+}
+
+section h2 {
+  font-size: 2.5rem; /* Tamanho do título */
+  margin-bottom: 40px; /* Espaço abaixo do título */
+  color: #ffffff; /* Cor do título */
+  text-align: center; /* Garante que o título esteja centralizado */
+}
+
+/* --- Estilos para Tabelas (Educação e Profissional) --- */
+#education table,
+#portfolio table,
+#professional table { /* Aplica os mesmos estilos para as tabelas de Educação e Profissional */
+  width: 100%; /* Ocupa a largura total da seção */
+  table-layout: fixed; /* Adiciona esta linha para controlar a largura das colunas */
+  border-collapse: collapse; /* Remove o espaçamento entre as bordas das células */
+  margin-top: 20px; /* Espaço acima da tabela */
+  background-color: #1a1a2e; /* Fundo mais escuro para a tabela */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidade */
+  border-radius: 8px; /* Cantos arredondados na tabela */
+  overflow: hidden; /* Garante que o conteúdo não vaze dos cantos arredondados */
+}
+
+/* Defina as larguras para os cabeçalhos de cada tabela */
+#education th:nth-child(1), /* Ano */
+#professional th:nth-child(1) { /* Ano */
+  width: 15%; /* Exemplo: 15% para a coluna do ano */
+}
+
+#education th:nth-child(2), /* Instituição */
+#professional th:nth-child(2) { /* Empresa */
+  width: 40%; /* Exemplo: 40% para a coluna do meio */
+}
+
+#education th:nth-child(3), /* Grau */
+#professional th:nth-child(3) { /* Papel */
+  width: 45%; /* Exemplo: 45% para a última coluna */
+}
+
+#education th,
+#portfolio th,
+#professional th {
+  color: white; /* Cor do texto no cabeçalho */
+  padding: 15px 20px; /* Espaçamento interno */
+  text-align: left; /* Alinhamento do texto à esquerda */
+  font-size: 1.1rem; /* Tamanho da fonte */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  background-color: #007bff; /* Cor consistente com outros elementos de destaque */
+  text-transform: uppercase; /* Para um visual mais profissional */
+}
+
+#education td,
+#professional td {
+  padding: 12px 20px; /* Espaçamento interno das células de dados */
+  border-bottom: 1px solid #333; /* Linha divisória entre as linhas */
+  color: #ccc; /* Cor do texto das células */
+  text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+#education tbody tr:last-child td,
+#professional tbody tr:last-child td {
+  border-bottom: none; /* Remove a borda da última linha para não ter linha duplicada */
+}
+
+#education tbody tr:hover,
+#professional tbody tr:hover {
+  background-color: #2a2a4e; /* Efeito de hover nas linhas */
+  cursor: pointer; /* Muda o cursor para indicar que é interativo (se for o caso) */
+}
+
+/* --- Estilos para as Linhas de Detalhe --- */
+/* Esta regra garante que a linha de detalhe comece escondida. */
+.detail-row.hidden {
+  display: none;
+}
+
+/* Esta regra torna a linha de detalhe visível quando a classe 'hidden' é removida. */
+.detail-row:not(.hidden) {
+  display: table-row; /* Para desktop, a linha deve ser table-row */
+  animation: fadeIn 0.3s ease-in-out; /* Aplica a animação ao aparecer */
+}
+
+/* Estilos gerais para a linha de detalhe visível */
+.detail-row {
+  background-color: #222; /* Fundo mais claro para os detalhes */
+  border-top: 1px solid #444; /* Borda sutil acima da linha de detalhe */
+}
+
+.detail-row td {
+  padding: 20px 30px; /* Mais padding para o conteúdo de detalhe */
+  line-height: 1.8; /* Espaçamento de linha para melhor leitura */
+  color: #ddd; /* Cor do texto */
+}
+
+.detail-row p {
+  margin-bottom: 10px;
+}
+
+.detail-row ul {
+  list-style: disc; /* Estilo de lista de disco */
+  margin-left: 20px; /* Indentação da lista */
+}
+
+.detail-row ul li {
+  margin-bottom: 5px;
+}
+
+/* Garante que a borda da última linha de detalhes também seja removida se necessário */
+#education tbody .detail-row:last-child td,
+#professional tbody .detail-row:last-child td {
+  border-bottom: none;
+}
+
+/* Estilo para o conteúdo dentro da célula de detalhes */
+.detail-content {
+  padding: 16px 24px; /* Espaçamento interno para o conteúdo dos detalhes */
+  line-height: 1.8; /* Altura da linha para melhor leitura */
+  font-size: 0.95rem; /* Tamanho da fonte um pouco menor */
+}
+
+.detail-content strong {
+  color: #007bff; /* Destaca os títulos dos detalhes */
+}
+
+/* Estilo para a linha clicável principal */
+.expandable-row {
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  transition: background-color 0.3s ease; /* Transição suave para o hover */
+}
+
+.expandable-row:hover {
+  background-color: #2a2a4e; 
+}
+
+/* Estilo para quando a linha principal está "ativa" (expandida) */
+.expandable-row.active {
+  background-color: #2a2a4e;
+  border-bottom: 1px solid #007bff; /* Uma borda para indicar que está ativa */
+}
+
+/* Adicione uma seta ou indicador de expansão se quiser */
+.expandable-row td:first-child {
+  position: relative;
+  padding-left: 45px; /* Espaço para o ícone */
+}
+
+.expandable-row td:first-child::before {
+  content: '+'; /* Ícone de mais */
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #007bff;
+  transition: transform 0.3s ease;
+}
+
+/* Quando a linha principal está "ativa", muda o ícone */
+.expandable-row.active td:first-child::before {
+  content: '-'; /* Ícone de menos */
+  transform: translateY(-50%) rotate(0deg); /* Garante que não gire se já estiver numa posição diferente */
+}
+
+
+/* === RESPONSIVIDADE PARA TABELAS (AQUI APENAS REGRAS ESPECÍFICAS PARA MOBILE) === */
+@media (max-width: 768px) {
+  #education table,
+  #professional table,
+  #portfolio table { 
+    display: block !important; /* Força display: block para a tabela em mobile */
+    overflow-x: auto; /* Adiciona scroll horizontal se a tabela for muito larga */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas (para o scroll) */
+  }
+
+  /* Para telas menores, esconde o cabeçalho original */
+  #education thead,
+  #professional thead,
+  #portfolio thead { 
+    display: none !important; /* Esconde o cabeçalho original */
+  }
+
+  /* Cada linha principal vira um bloco em mobile */
+  #education tr,
+  #professional tr,
+  #portfolio tr { 
+    display: block !important; /* Força cada tr a ser um bloco */
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #1a1a2e;
+  }
+
+  /* Cada célula de dado vira um bloco em mobile */
+  #education td,
+  #professional td,
+  #portfolio td { 
+    display: block !important; /* Força cada td a ser um bloco */
+    text-align: left; /* Alinha o conteúdo da célula à direita, para o data-label */
+    border-bottom: 1px solid #333;
+    padding: 10px 15px;
+  }
+
+  /* Adiciona o label para cada célula em mobile */
+  #education td::before,
+  #professional td::before,
+  #portfolio td::before { 
+    content: attr(data-label);
+    float: left; /* Flutua o label para a esquerda */
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  /* Em mobile, a linha de detalhes precisa ser 'block' para o layout responsivo */
+  .detail-row:not(.hidden) {
+    display: block !important; /* Força 'block' para o layout de lista em mobile */
+    margin-top: -15px; /* Ajusta o espaçamento para "colar" no bloco principal */
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #444;
+    border-top: none;
+  }
+
+  /* Esta classe controla a visibilidade em mobile quando a linha de detalhes está escondida */
+  .detail-row.hidden-mobile {
+    display: none !important; /* Força o esconder em mobile */
+  }
+
+  /* SOBRESCRITA ESPECÍFICA para a primeira célula das linhas expansíveis em mobile */
+  /* Para a coluna de projeto do portfólio, o logo/texto deve ficar à direita, mas com espaço para o ícone. */
+  #education tr.expandable-row td:first-child,
+  #professional tr.expandable-row td:first-child,
+  #portfolio tr.expandable-row td:first-child { 
+    padding-left: 60px; 
+    text-align: left; 
+  }
+
+  /* Ajuste a posição do ícone em mobile, se necessário. Ele está absoluto e deve respeitar o padding-left */
+  #education tr.expandable-row td:first-child::before,
+  #professional tr.expandable-row td:first-child::before,
+  #portfolio tr.expandable-row td:first-child::before { /* <<---- ADICIONADO AQUI */
+      left: 15px; /* Mantém o ícone a 15px da borda esquerda da célula */
+      top: 50%;
+      transform: translateY(-50%);
+  }
+}
+
+/* --- SEÇÃO PORTFOLIO --- */
+#portfolio {
+  padding: 80px 20px;
+  background-color: #121212;
+  color: #f1f1f1;
+  text-align: left; /* Centraliza o título e a grade de projetos */
+}
+
+#portfolio h2 {
+  margin-bottom: 50px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px de largura mínima, ajusta para 1, 2 ou 3 colunas */
+  gap: 30px; /* Espaçamento entre os itens */
+  max-width: 1200px;
+  margin: 0 auto 60px auto; /* Centraliza a grade e adiciona espaço abaixo */
+  padding: 0 10px; /* Pequeno padding para as bordas */
+}
+
+.portfolio-item {
+  background-color: #1a1a2e;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px); /* Efeito de flutuar ao passar o mouse */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+
+.portfolio-item h3 {
+  font-size: 1.8rem;
+  color: #007bff; /* Cor para o título do projeto */
+  margin-bottom: 15px;
+}
+
+.portfolio-item p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  flex-grow: 1; /* Faz a descrição ocupar o espaço restante */
+}
+
+.btn-portfolio:hover {
+  background-color: #5463d8;
+  transform: scale(1.05);
+}
+
+/* Estilos para a lista de skills (se você mantiver) */
+.skills-list {
+  list-style: none; /* Remove bolinhas da lista */
+  padding: 0;
+  display: flex; /* Transforma em flexbox para organizar em linha */
+  flex-wrap: wrap; /* Permite quebrar em várias linhas se não houver espaço */
+  justify-content: center; /* Centraliza os itens */
+  gap: 15px; /* Espaçamento entre os itens da lista */
+  max-width: 800px;
+  margin: 40px auto 0 auto; /* Centraliza e adiciona margem superior */
+}
+
+.skills-list li {
+  background-color: orange; /* Cor de fundo para cada skill */
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Responsividade para a grade de portfólio */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    padding: 0 20px;
+  }
+
+  .portfolio-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .portfolio-item h3 {
+    font-size: 1.6rem;
+  }
+
+  .portfolio-item p {
+    font-size: 0.9rem;
+  }
+
+  .skills-list {
+    flex-direction: column; /* Skills em coluna para mobile */
+    align-items: center; /* Centraliza as skills */
+  }
+}
+
+/* Defina as larguras para os cabeçalhos de cada tabela */
+
+#portfolio th:nth-child(1) { /* Coluna Project/Logo */
+  width: 25%; /* Ajuste conforme necessário */
+}
+#portfolio th:nth-child(2) { /* Coluna Description */
+  width: 55%; /* Ajuste conforme necessário */
+}
+#portfolio th:nth-child(3) { /* Coluna Link */
+  width: 20%; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o logo dentro da tabela */
+
+.portfolio-logo-table {
+  width: 80px; /* Tamanho do logo ajustado */
+  height: 80px; /* Tamanho do logo ajustado */
+  object-fit: contain;
+  vertical-align: middle; /* Alinha o logo com o texto na linha do meio */
+  margin-right: 15px; /* Espaço entre o logo e o nome do projeto */
+  border-radius: 20%;
+  background-color: white;
+  padding: 8px;
+  display: inline-block; /* Garante que se comporte bem com o texto ao lado */
+}
+
+/* Estilo para o nome do projeto ao lado do logo */
+.project-name {
+  display: inline-block; /* Para alinhar com o logo */
+  vertical-align: middle;
+  font-weight: bold; /* Deixa o nome do projeto em negrito */
+  color: #fff; /* Garante que a cor seja visível */
+}
+
+/* Estilo para o botão "Ver Projeto" dentro da tabela */
+.btn-portfolio-table {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff !important;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Impede que o texto quebre */
+}
+
+.btn-portfolio-table:hover {
+  background-color: #5463d8;
+  transform: scale(1.05);
+}
+
+/* Estilo para o nome do projeto ao lado do logo */
+.project-name {
+  display: inline-block; /* Para alinhar com o logo */
+  vertical-align: middle; /* Alinha o texto na linha do meio com o logo */
+  font-weight: bold; /* Deixa o nome do projeto em negrito */
+  color: #fff; /* Garante que a cor seja visível */
+  margin-left: 5px; /* Pequeno espaço entre o logo e o texto, se precisar */
+}
+
+/* --- SEÇÃO DE CONTACTO --- */
+#contact {
+  padding: 80px 20px;
+  color: white;
+  text-align: center; /* Centraliza o título */
+}
+
+#contact h2 {
+  margin-bottom: 40px;
+  color: white; /* Cor do título */
+  font-size: 2.5rem;
+}
+
+#contact form {
+  max-width: 600px; /* Largura máxima para o formulário */
+  margin: 0 auto; /* Centraliza o formulário na página */
+  padding: 30px;
+  background-color: #22223b; /* Fundo ligeiramente mais claro para o formulário */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  text-align: left; /* Alinha labels e inputs à esquerda dentro do formulário */
+}
+
+#contact label {
+  display: block; /* Garante que cada label fica na sua linha */
+  font-size: 1rem;
+  color: white; /* Cor para os labels */
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%; /* Ocupa toda a largura disponível no formulário */
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #333; /* Fundo dos inputs */
+  color: #f1f1f1; /* Cor do texto digitado */
+  font-size: 1rem;
+  box-sizing: border-box; /* Inclui padding e border na largura total */
+  margin-bottom: 20px; /* Espaço após cada input */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Efeito de foco */
+  outline: none; /* Remove a borda de foco padrão do navegador */
+}
+
+#contact textarea {
+  resize: vertical; /* Permite redimensionar apenas verticalmente */
+  min-height: 120px; /* Altura mínima para a caixa de mensagem */
+}
+
+/* Estilo para os botões de Enviar e Limpar */
+#contact input[type="submit"],
+#contact input[type="reset"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 15px; /* Espaçamento entre os botões */
+  margin-top: 10px; /* Espaço acima dos botões */
+}
+
+#contact input[type="submit"]:hover,
+#contact input[type="reset"]:hover {
+  background-color: #5463d8;
+  
+}
+
+/* Responsividade para a seção de contacto */
+@media (max-width: 768px) {
+  #contact {
+    padding: 60px 15px;
+  }
+
+  #contact h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  #contact form {
+    padding: 20px;
+  }
+
+  #contact input[type="submit"],
+  #contact input[type="reset"] {
+    width: calc(50% - 7.5px); /* Divide a largura em 2 colunas, com espaço entre */
+    margin-right: 0;
+    margin-bottom: 10px; /* Espaço entre os botões em mobile */
+  }
+
+  /* Para alinhar os botões lado a lado em mobile, se houver espaço */
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens do formulário */
+  }
+
+  #contact form label,
+  #contact form input,
+  #contact form textarea {
+    width: 100%; /* Garante que os campos ocupam toda a largura */
+  }
+
+  /* Um pouco de flex para os botões se tiver espaço */
+  #contact form input[type="submit"],
+  #contact form input[type="reset"] {
+    display: inline-block; /* Faz os botões ficarem lado a lado se couberem */
+  }
+
+  #contact form div { /* Remove quaisquer div's de agrupamento de antes */
+      display: block;
+  }
+}
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background: linear-gradient(to right, #007bff, #5463d8); /* azul moderno */
+  z-index: 9999;
+  transition: width 0.2s ease-out;
+}
